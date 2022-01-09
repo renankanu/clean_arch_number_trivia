@@ -1,9 +1,22 @@
 import 'package:clean_arch/core/errors/failures.dart';
+import 'package:clean_arch/core/platform/network_info.dart';
+import 'package:clean_arch/features/number_trivia/data/datasources/number_trivia_local_data_source.dart';
+import 'package:clean_arch/features/number_trivia/data/datasources/number_trivia_remote_data_source.dart';
 import 'package:clean_arch/features/number_trivia/domain/entities/number_trivia.dart';
 import 'package:clean_arch/features/number_trivia/domain/repositories/number_trivia_repository.dart';
 import 'package:dartz/dartz.dart';
 
 class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
+  final NumberTriviaRemoteDataSource remoteDataSource;
+  final NumberTriviaLocalDataSource localDataSource;
+  final NetworkInfo networkInfo;
+
+  NumberTriviaRepositoryImpl({
+    required this.remoteDataSource,
+    required this.localDataSource,
+    required this.networkInfo,
+  });
+
   @override
   Future<Either<Failures, NumberTrivia>> getConcreteNumberTrivia(int number) {
     // TODO: implement getConcreteNumberTrivia
