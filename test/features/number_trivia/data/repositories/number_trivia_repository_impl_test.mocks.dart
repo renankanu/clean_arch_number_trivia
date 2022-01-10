@@ -4,11 +4,11 @@
 
 import 'dart:async' as _i4;
 
-import 'package:clean_arch/core/platform/network_info.dart' as _i6;
+import 'package:clean_arch/core/platform/network_info.dart' as _i5;
 import 'package:clean_arch/features/number_trivia/data/datasources/number_trivia_local_data_source.dart'
-    as _i5;
-import 'package:clean_arch/features/number_trivia/data/datasources/number_trivia_remote_data_source.dart'
     as _i3;
+import 'package:clean_arch/features/number_trivia/data/datasources/number_trivia_remote_data_source.dart'
+    as _i6;
 import 'package:clean_arch/features/number_trivia/data/models/number_trivia_model.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
@@ -25,34 +25,11 @@ import 'package:mockito/mockito.dart' as _i1;
 class _FakeNumberTriviaModel_0 extends _i1.Fake
     implements _i2.NumberTriviaModel {}
 
-/// A class which mocks [NumberTriviaRemoteDataSource].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockNumberTriviaRemoteDataSource extends _i1.Mock
-    implements _i3.NumberTriviaRemoteDataSource {
-  MockNumberTriviaRemoteDataSource() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i4.Future<_i2.NumberTriviaModel> getConcreteNumberTrivia(int? number) =>
-      (super.noSuchMethod(Invocation.method(#getConcreteNumberTrivia, [number]),
-              returnValue: Future<_i2.NumberTriviaModel>.value(
-                  _FakeNumberTriviaModel_0()))
-          as _i4.Future<_i2.NumberTriviaModel>);
-  @override
-  _i4.Future<_i2.NumberTriviaModel> getRandomNumberTrivia() =>
-      (super.noSuchMethod(Invocation.method(#getRandomNumberTrivia, []),
-              returnValue: Future<_i2.NumberTriviaModel>.value(
-                  _FakeNumberTriviaModel_0()))
-          as _i4.Future<_i2.NumberTriviaModel>);
-}
-
 /// A class which mocks [NumberTriviaLocalDataSource].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockNumberTriviaLocalDataSource extends _i1.Mock
-    implements _i5.NumberTriviaLocalDataSource {
+    implements _i3.NumberTriviaLocalDataSource {
   MockNumberTriviaLocalDataSource() {
     _i1.throwOnMissingStub(this);
   }
@@ -74,7 +51,7 @@ class MockNumberTriviaLocalDataSource extends _i1.Mock
 /// A class which mocks [NetworkInfo].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockNetworkInfo extends _i1.Mock implements _i6.NetworkInfo {
+class MockNetworkInfo extends _i1.Mock implements _i5.NetworkInfo {
   MockNetworkInfo() {
     _i1.throwOnMissingStub(this);
   }
@@ -83,4 +60,23 @@ class MockNetworkInfo extends _i1.Mock implements _i6.NetworkInfo {
   _i4.Future<bool> get isConnected =>
       (super.noSuchMethod(Invocation.getter(#isConnected),
           returnValue: Future<bool>.value(false)) as _i4.Future<bool>);
+}
+
+/// A class which mocks [NumberTriviaRemoteDataSource].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockNumberTriviaRemoteDataSource extends _i1.Mock
+    implements _i6.NumberTriviaRemoteDataSource {
+  @override
+  _i4.Future<_i2.NumberTriviaModel> getConcreteNumberTrivia(int? number) =>
+      (super.noSuchMethod(Invocation.method(#getConcreteNumberTrivia, [number]),
+              returnValue: Future<_i2.NumberTriviaModel>.value(
+                  _FakeNumberTriviaModel_0()))
+          as _i4.Future<_i2.NumberTriviaModel>);
+  @override
+  _i4.Future<_i2.NumberTriviaModel> getRandomNumberTrivia() =>
+      (super.noSuchMethod(Invocation.method(#getRandomNumberTrivia, []),
+              returnValue: Future<_i2.NumberTriviaModel>.value(
+                  _FakeNumberTriviaModel_0()))
+          as _i4.Future<_i2.NumberTriviaModel>);
 }
