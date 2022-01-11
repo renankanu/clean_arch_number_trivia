@@ -40,11 +40,11 @@ void main() {
   });
 
   group('getConcreteNumberTrivia', () {
-    test('should check if the device is online', () {
+    test('should check if the device is online', () async {
       //arrange
       when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
       // act
-      repository.getConcreteNumberTrivia(tNumber);
+      await repository.getConcreteNumberTrivia(tNumber);
       // assert
       verify(mockNetworkInfo.isConnected);
     });
