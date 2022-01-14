@@ -46,11 +46,11 @@ void main() {
       // arrange
       when(mockSharedPreferences.getString(any)).thenReturn(null);
       // act
-      // Not calling the method here, just storing it inside a call variable
+      // Não chamando o método aqui, basta armazená-lo dentro de uma variável de chamada
       final call = dataSource.getLastNumberTrivia;
       // assert
-      // Calling the method happens from a higher-order function passed.
-      // This is needed to test if calling a method throws an exception.
+      // Chamar o método acontece de uma função de ordem superior passada.
+      // Isso é necessário para testar se chamar um método lança uma exceção.
       expect(() => call(), throwsA(const TypeMatcher<CacheException>()));
     });
   });
